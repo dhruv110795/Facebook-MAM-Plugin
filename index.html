@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facebook App</title>
+
+
+    <link href="css/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="fontawesome-pro/css/light.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-pro/css/regular.min.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome-pro/css/solid.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="js/plugin/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" media="screen" href="css/plugin/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/plugin/jquery.alertable.css">
+
+    <script type="text/javascript" src="js/plugin/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.alertable.js"></script>
+    <script type="text/javascript" src="js/plugin/file-download.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/plugin/moment.js"></script>
+    <script type="text/javascript" src="js/plugin/bootstrap.min.js"></script>
+    <script type="text/javascript" src="fontawesome-pro/js/light.min.js"></script>
+    <script type="text/javascript" src="fontawesome-pro/js/regular.min.js"></script>
+    <script type="text/javascript" src="fontawesome-pro/js/solid.min.js"></script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script type="text/javascript" src="js/script/main.js"></script>
+</head>
+
+<body>
+    <div id="app_content" >
+        <img style="width: 300px;height: auto;" src="sample.png.png">
+        <button id="share">Facebook</button>
+        <button id="postImage">Post</button>
+        <button id="poststatus">Status</button>
+        <span id="status"></span>
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=750072185754568&autoLogAppEvents=1" nonce="ACDiTIGn"></script>
+
+    <div class="fb-share-button" data-href="https://192.168.1.62:1410/get_file//home/mediaworker/FacebookMaMPlugin/sample.png.png" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkarthavyaspace.com%3A8888%2Fmam%2F%23bins%2Fmw%3A%2F%2FKTPL_FTP%2FAssets%2FPresentations%2FHYPE%2FPosting%2520to%2520Social%2520Media%2FGRAPHICS&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// initialize and setup facebook js sdk
+		window.fbAsyncInit = function() {
+		    FB.init({
+              appId      : '750072185754568',
+              cookie     : true,                     // Enable cookies to allow the server to access the session.
+		      xfbml      : true,
+		      version    : 'v7.0' 
+		    });
+
+		    FB.getLoginStatus(function(response) {
+		    	if (response.status === 'connected') {
+		    		document.getElementById('status').innerHTML = 'We are connected.';
+		    		document.getElementById('login').style.visibility = 'hidden';
+		    	} else if (response.status === 'not_authorized') {
+		    		document.getElementById('status').innerHTML = 'We are not logged in.'
+		    	} else {
+		    		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    	}
+		    });
+		};
+
+		(function(d, s, id){
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) {return;}
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_US/sdk.js";
+		    fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		function login() {
+			FB.login(function(response) {
+				if (response.status === 'connected') {
+		    		document.getElementById('status').innerHTML = 'We are connected.';
+		    		document.getElementById('login').style.visibility = 'hidden';
+		    	} else if (response.status === 'not_authorized') {
+		    		document.getElementById('status').innerHTML = 'We are not logged in.'
+		    	} else {
+		    		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    	}
+			}, {scope: 'pages_manage_posts ,pages_manage_engagement , pages_manage_ads,pages_manage_metadata,pages_read_engagement,pages_read_user_content'});
+		}
+
+		// getting basic user info
+		function getInfo() {
+			FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+                document.getElementById('status').innerHTML = response.id;
+                console.log(">>>>>>GETinfo",response);
+			});
+		}
+
+		// posting on user timeline
+		function post() {
+			FB.api('/me/feed', 'post', {message: 'my first status...'}, function(response) {
+                document.getElementById('status').innerHTML = response.id;
+                console.log(">>>>Post",response);
+			});
+		}
+	</script>
+
+	<div id="status"></div>
+	<button onclick="getInfo()">Get Info</button>
+	<button onclick="post()">Post</button>
+	<button onclick="login()" id="login">Login</button>
+</body>
+</html> -->
